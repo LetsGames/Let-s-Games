@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Let's Games</title>
+
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo" aria-label="Let's Games home">
+        <img src="images/Logo Let's Games-doorzichig.webp" alt="Let's Games" />
+      </a>
+
+      <form class="search-form" id="search-form" role="search">
+        <button type="submit" class="search-button" aria-label="Zoeken">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 5 5"></path>
+          </svg>
+        </button>
+
+        <input
+          type="search"
+          id="game-search"
+          placeholder="Zoek een game..."
+          aria-label="Zoek een game"
+          autocomplete="off"
+        />
+      </form>
+
+      <a href="pages/login.html" class="login-link" aria-label="Inloggen">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="7" r="4"></circle>
+          <path d="M4 21v-2a8 8 0 0 1 16 0v2z"></path>
+        </svg>
+      </a>
+    </header>
+
+    <main class="games-container">
+      <section class="game-grid" id="game-grid" aria-label="Games">
+        <article class="game-card" data-name="Don't Hit the Wall">
+          <a href="pages/games/Don't_hit_the_wall/Don't_hit_the_wall.html">
+            <img src="images/games/Don't_hit_the_wall.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 2">
+          <a href="pages/game2.html">
+            <img src="images/games/game2.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 3">
+          <a href="pages/game3.html">
+            <img src="images/games/game3.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 4">
+          <a href="pages/game4.html">
+            <img src="images/games/game4.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 5">
+          <a href="pages/game5.html">
+            <img src="images/games/game5.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 6">
+          <a href="pages/game6.html">
+            <img src="images/games/game6.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 7">
+          <a href="pages/game7.html">
+            <img src="images/games/game7.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 8">
+          <a href="pages/game8.html">
+            <img src="images/games/game8.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 9">
+          <a href="pages/game9.html">
+            <img src="images/games/game9.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 10">
+          <a href="pages/game10.html">
+            <img src="images/games/game10.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 11">
+          <a href="pages/game11.html">
+            <img src="images/games/game11.jpg" />
+          </a>
+        </article>
+
+        <article class="game-card" data-name="Game 12">
+          <a href="pages/game12.html">
+            <img src="images/games/game12.jpg" />
+          </a>
+        </article>
+      </section>
+
+      <p id="no-results" hidden>Geen games gevonden.</p>
+    </main>
+  </body>
+</html>

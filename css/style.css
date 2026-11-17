@@ -1,0 +1,445 @@
+
+/* 1. BASIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 2. KLEUREN */
+
+:root {
+    --black: #0b0b0b;
+    --dark-black: #050505;
+    --dark-gray: #151515;
+    --red: #c1121f;
+    --gold: #ffd154;
+    --white: #ffffff;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+
+/* 3. ACHTERGROND */
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(5, 5, 5, 0.25),
+            rgba(5, 5, 5, 0.25)
+        ),
+        url("../images/background5.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* 4. LINKS */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* 5. HEADER */
+
+.site-header {
+    width: 100%;
+    height: 76px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(5, 5, 5, 0.96);
+    border-bottom: 2px solid var(--red);
+}
+
+
+/* 6. LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.logo img {
+    display: block;
+    width: 150px;
+    max-height: 58px;
+    object-fit: contain;
+    object-position: left center;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.02);
+}
+
+
+
+/* 7. ZOEKFUNCTIE */
+
+.search-form {
+    width: 450px;
+    height: 44px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 12px;
+
+    background-color: #111111;
+    border: 1px solid #444444;
+    border-radius: 12px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: border-color 0.2s ease;
+}
+
+.search-form:focus-within {
+    border-color: #ffd154;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.search-button svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+}
+
+.search-form input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--white);
+
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.search-form input::placeholder {
+    color: #aaaaaa;
+}
+
+
+
+
+/* 8. LOGIN */
+
+.login-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+
+    color: var(--white);
+    margin-left: auto;
+
+    transition: color 0.2s ease;
+}
+
+.login-link svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.login-link:hover {
+    color: #ffd154;
+}
+
+
+
+
+/* 9. GAMES-CONTAINER */
+
+.games-container {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 28px 30px 45px;
+}
+
+
+/* 10. GAMEGRID */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* 11. GAMEKAART */
+
+.game-card {
+    min-width: 0;
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--dark-gray);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--red);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 12. GAMEAFBEELDING */
+
+.game-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.game-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background-color: #151515;
+
+    transition: transform 0.25s ease;
+}
+
+.game-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* 13. GEEN ZOEKRESULTATEN */
+
+#no-results {
+    padding: 45px 0;
+    text-align: center;
+    color: #cccccc;
+    font-size: 15px;
+}
+
+#no-results[hidden] {
+    display: none;
+}
+
+
+/* =================================
+   DON'T HIT THE WALL
+================================= */
+
+/* BOVENBALK */
+
+.dhtw-header {
+    width: 100%;
+    height: 85px;
+    padding: 0 5%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* GAME TITEL IN BOVENBALK */
+
+.game-header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffd154;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.dhtw-logo img {
+    height: 55px;
+    width: auto;
+    display: block;
+}
+
+.dhtw-login {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dhtw-login:hover {
+    color: #ff3333;
+}
+
+
+/* PAGINA */
+
+.dhtw-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px 60px;
+    box-sizing: border-box;
+}
+
+
+/* GAMEVENSTER */
+
+.dhtw-game-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dhtw-game-frame {
+    width: 1000px;
+    height: 750px;
+    border: 3px solid #ffd154;
+    border-radius: 8px;
+    overflow: hidden;
+    background: black;
+}
+
+.dhtw-game-frame iframe {
+    display: block;
+    width: 1000px;
+    height: 750px;
+    border: none;
+}
+
+
+/* SPELUITLEG */
+
+.dhtw-information {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+}
+
+.dhtw-information h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.dhtw-slogan {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+
+/* CONTROLS */
+
+.dhtw-information h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.dhtw-controls {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.dhtw-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dhtw-control span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: #222;
+    border: 1px solid #ffd154;
+    border-radius: 6px;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.dhtw-control p {
+    font-size: 14px;
+}
