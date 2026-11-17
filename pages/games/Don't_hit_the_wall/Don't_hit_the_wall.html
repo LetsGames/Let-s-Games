@@ -8,6 +8,20 @@
 
     <link rel="icon" href="../../../images/favicon-32x32.png" />
     <link rel="stylesheet" href="../../../css/style.css" />
+
+    <style>
+      .dhtw-game-frame {
+        width: 1000px;
+        max-width: 100%;
+        margin: auto;
+      }
+
+      #gameCanvas {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
 
   <body>
@@ -29,23 +43,13 @@
       </a>
     </header>
 
-    <!-- GAME PAGINA -->
     <main class="dhtw-page">
-      <!-- GAME -->
       <section class="dhtw-game-section">
         <div class="dhtw-game-frame">
-          <!-- Browserversie van jouw Pygame-game -->
-          <iframe
-            src="build/web/index.html"
-            title="Don't Hit The Wall"
-            width="1000"
-            height="750"
-          >
-          </iframe>
+          <canvas id="gameCanvas" width="1000" height="750"></canvas>
         </div>
       </section>
 
-      <!-- SPELUITLEG -->
       <section class="dhtw-information">
         <p class="dhtw-slogan">
           Hoe lang kan jij rijden zonder de muur te raken?
@@ -76,5 +80,7 @@
         </div>
       </section>
     </main>
+
+    <script src="game.js"></script>
   </body>
 </html>
